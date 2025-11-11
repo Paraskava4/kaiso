@@ -1,0 +1,71 @@
+import { API } from "./schemas";
+
+const { REPORT_CREATE_EDIT, ARTICLE_CREATE_EDIT, REPORTING_SETTING } = API;
+
+export const defaultLoginValues = {
+    email: "",
+    password: "",
+};
+
+export const defaultForgotPasswordValues = {
+    email: "",
+};
+
+export const defaultVerifyCodeValues = {
+    otp: "",
+};
+
+export const defaultCreateUpdateReportValue = {
+    [REPORT_CREATE_EDIT.SINGLE_USER_PRICE]: "",
+    [REPORT_CREATE_EDIT.BUSINESS_PRICE]: "",
+    [REPORT_CREATE_EDIT.ENTREPRENEUR_PRICE]: "",
+    [REPORT_CREATE_EDIT.PAGES]: "",
+    [REPORT_CREATE_EDIT.PUBLISH_DATE]: "",
+    [REPORT_CREATE_EDIT.CATEGORY_ID]: "",
+    [REPORT_CREATE_EDIT.SUBCATEGORY_ID]: "",
+    [REPORT_CREATE_EDIT.REPORT_TITLE]: "",
+    [REPORT_CREATE_EDIT.REPORT_SUBTITLE]: "",
+    [REPORT_CREATE_EDIT.REPORT_OVERVIEW]: "",
+    [REPORT_CREATE_EDIT.TABLE_OF_CONTENT]: "",
+    [REPORT_CREATE_EDIT.AVAILABLE_IN]: "",
+    [REPORT_CREATE_EDIT.INTERNET_HANDLING_CHARGE]: "",
+    [REPORT_CREATE_EDIT.SEO_TITLE]: "",
+    [REPORT_CREATE_EDIT.META_DESCRIPTION]: "",
+    [REPORT_CREATE_EDIT.KEYWORDS]: "",
+    [REPORT_CREATE_EDIT.URL]: "",
+    [REPORT_CREATE_EDIT.STATUS]: "Draft",
+    [REPORT_CREATE_EDIT.AUTHOR]: "",
+    [REPORT_CREATE_EDIT.REPORT_DESCRIPTION]: "",
+};
+
+export const defaultCreateUpdateArticleValue = {
+    [ARTICLE_CREATE_EDIT.ARTICLE_TITLE]: "",
+    [ARTICLE_CREATE_EDIT.ARTICLE_SUBTITLE]: "",
+    [ARTICLE_CREATE_EDIT.ARTICLE_TYPE]: "",
+    [ARTICLE_CREATE_EDIT.CATEGORY_ID]: "",
+    [ARTICLE_CREATE_EDIT.SUBCATEGORY_ID]: "",
+    [ARTICLE_CREATE_EDIT.ARTICLE_CONTENT]: "",
+    [ARTICLE_CREATE_EDIT.SEO_TITLE]: "",
+    [ARTICLE_CREATE_EDIT.META_DESCRIPTION]: "",
+    [ARTICLE_CREATE_EDIT.KEYWORDS]: "",
+    [ARTICLE_CREATE_EDIT.URL]: "",
+    [ARTICLE_CREATE_EDIT.PUBLISH_DATE]: "",
+    [ARTICLE_CREATE_EDIT.BLOG_IMAGE]: {},
+    [ARTICLE_CREATE_EDIT.STATUS]: "Draft",
+};
+
+export const defaultCreateReportFormCSV = {
+    csvFile: null,
+};
+
+export const defaultCreateArticleFormCSV = {
+    csvFile: null,
+};
+
+export const defaultReportSettings = {
+    [REPORTING_SETTING.REPORT_BUTTON_ID]: "",
+    [REPORTING_SETTING.BUY_BUTTON]: "",
+    [REPORTING_SETTING.INQUIRE_BUTTON]: "",
+    [REPORTING_SETTING.REQUEST_BUTTON]: "",
+    [REPORTING_SETTING.RESEARCH_METHODOLOGY]: "",
+};

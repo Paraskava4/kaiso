@@ -1,0 +1,306 @@
+/* Services Section Styles */
+
+.servicesSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 60px 160px;
+}
+
+/* Section Title Styles */
+
+.sectionTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    max-width: 762px;
+    width: 100%;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.sectionSubtitle {
+    align-self: stretch;
+    font-weight: 500;
+    color: #dc2626;
+    max-width: 100%;
+    font-family: var(--font-inter);
+    margin: 0;
+    font-size: 16px;
+}
+
+.sectionTitleHeading {
+    margin-top: 8px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #18181b;
+    max-width: 100%;
+    font-family: var(--font-inter);
+    margin: 8px 0 0 0;
+    font-size: 25px;
+}
+
+.sectionDescription {
+    margin-top: 8px;
+    color: #525252;
+    max-width: 100%;
+    font-family: var(--font-inter);
+    margin: 8px 0 0 0;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Services List Styles */
+.servicesList {
+    display: flex;
+    flex-wrap: nowrap;
+    /* Prevent wrapping for side-by-side layout */
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 24px;
+    margin-top: 64px;
+    max-width: 1440px;
+    padding: 0;
+}
+
+.servicesContent {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    min-width: 240px;
+    width: 800px;
+    max-width: 100%;
+    flex-shrink: 1;
+    /* Allow shrinking to maintain side-by-side */
+}
+
+.servicesImage {
+    object-fit: contain;
+    aspect-ratio: 1.3;
+    box-sizing: border-box;
+    min-width: 240px;
+    margin-top: -8%;
+    width: 100%;
+    /* take full width of parent */
+    height: 250px;
+    /* default height */
+    flex-shrink: 1;
+}
+
+/* Tablet */
+@media (min-width: 640px) {
+    .servicesImage {
+        height: 250px;
+    }
+}
+
+/* Medium screens */
+@media (min-width: 768px) {
+    .servicesImage {
+        height: 400px;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+    .servicesImage {
+        height: 450px;
+    }
+}
+
+/* Extra Large */
+@media (min-width: 1280px) {
+    .servicesImage {
+        height: 580px;
+    }
+}
+
+
+/* RESPONSIVE STYLES */
+
+/* Above 1780px: Reduce gap for better spacing */
+@media (min-width: 1781px) {
+    .servicesList {
+        gap: 16px;
+        /* Reduced gap for larger screens */
+    }
+}
+
+/* Between 1440px and 1100px: Keep side-by-side layout, reduce gap gradually */
+@media (max-width: 1440px) and (min-width: 1101px) {
+    .servicesSection {
+        padding: 80px 160px;
+    }
+
+    .sectionSubtitle {
+        font-size: calc(16px - (1440px - 100vw) * 0.003);
+    }
+
+    .sectionTitleHeading {
+        font-size: calc(30px - (1440px - 100vw) * 0.01);
+    }
+
+    .sectionDescription {
+        font-size: calc(18px - (1440px - 100vw) * 0.005);
+    }
+
+    .servicesList {
+        flex-wrap: nowrap;
+        /* Ensure side-by-side layout */
+        gap: calc(24px - (1440px - 100vw) * 0.05);
+        /* Reduce gap more for tighter fit */
+        margin-top: calc(64px - (1440px - 100vw) * 0.03);
+    }
+
+    .servicesContent {
+        width: calc(586px - (1440px - 100vw) * 0.4);
+        /* More aggressive scaling */
+        min-width: 300px;
+        /* Prevent too small */
+    }
+
+    .servicesImage {
+        width: calc(650px - (1440px - 100vw) * 0.45);
+        /* More aggressive scaling */
+        min-width: 320px;
+        /* Prevent too small */
+    }
+}
+
+/* Between 1100px and 769px: Stack vertically (up and down) */
+@media (max-width: 1100px) and (min-width: 769px) {
+    .servicesSection {
+        padding: 100px 80px;
+    }
+
+    .sectionSubtitle {
+        font-size: 15px;
+    }
+
+    .sectionTitleHeading {
+        font-size: 26px;
+    }
+
+    .sectionDescription {
+        font-size: 17px;
+    }
+
+    .servicesList {
+        flex-direction: column;
+        gap: 24px;
+        margin-top: 48px;
+        align-items: center;
+    }
+
+    .servicesContent {
+        width: 100%;
+        max-width: 600px;
+        min-width: auto;
+    }
+
+    .servicesImage {
+        width: 100%;
+        max-width: 600px;
+        min-width: auto;
+        order: -1;
+        /* Image goes to top */
+    }
+}
+
+/* Below 768px: Vertical stacked layout with larger images */
+@media (max-width: 768px) {
+    .servicesSection {
+        padding: 80px 40px;
+    }
+
+    .sectionSubtitle {
+        font-size: 14px;
+    }
+
+    .sectionTitleHeading {
+        font-size: 24px;
+    }
+
+    .sectionDescription {
+        font-size: 16px;
+    }
+
+    .servicesList {
+        flex-direction: column;
+        gap: 32px;
+        margin-top: 40px;
+        align-items: center;
+    }
+
+    .servicesContent {
+        width: 100%;
+        max-width: 600px;
+        min-width: auto;
+    }
+
+    .servicesImage {
+        width: 100%;
+        max-width: 700px;
+        min-width: auto;
+        order: -1;
+    }
+}
+
+@media (max-width: 576px) {
+    .servicesSection {
+        padding: 60px 20px;
+    }
+
+    .sectionSubtitle {
+        font-size: 13px;
+    }
+
+    .sectionTitleHeading {
+        font-size: 22px;
+    }
+
+    .sectionDescription {
+        font-size: 15px;
+    }
+
+    .servicesList {
+        gap: 28px;
+        margin-top: 32px;
+    }
+
+    .servicesImage {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 375px) {
+    .servicesSection {
+        padding: 50px 15px;
+    }
+
+    .sectionSubtitle {
+        font-size: 12px;
+    }
+
+    .sectionTitleHeading {
+        font-size: 20px;
+    }
+
+    .sectionDescription {
+        font-size: 14px;
+    }
+
+    .servicesList {
+        gap: 24px;
+        margin-top: 28px;
+    }
+
+    .servicesImage {
+        max-width: 500px;
+    }
+}

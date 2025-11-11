@@ -1,0 +1,504 @@
+/* Map Section Styles */
+.map-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  align-self: stretch;
+  padding: 60px 0;
+  /* Override any parent container constraints */
+  width: 100%;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  max-width: calc(100vw - (100vw - 100%));
+  box-sizing: border-box;
+}
+
+/* Map Image Container - New responsive container for static image */
+.map-image-container {
+  width: 100%;
+  max-width: 1200px;
+  /* Increased from 1200px to make map wider */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  /* Responsive padding to prevent edge-to-edge */
+  padding: 0 clamp(20px, 4vw, 60px);
+  box-sizing: border-box;
+}
+
+.map-image-wrapper {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  /* Create aspect ratio container for consistent sizing */
+  aspect-ratio: 2 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.map-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+@media screen and (max-width: 480px) {
+  .map-image {
+    width: 100% !important;
+    height: 55% !important;
+    margin-top: 23%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+}
+
+/* 
+.interactive-map-container:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+} */
+
+.interactive-map-container:focus {
+  outline: none !important;
+}
+
+/* Map SVG Styling */
+.interactive-map-container svg {
+  width: 100%;
+  height: 100%;
+  max-height: 612px;
+  display: block;
+  /* Disable selection and interaction */
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  -webkit-touch-callout: none !important;
+  -webkit-tap-highlight-color: transparent;
+  /* Prevent text cursor */
+  cursor: default;
+}
+
+/* Disable selection on all SVG elements */
+.interactive-map-container svg *,
+.interactive-map-container path,
+.interactive-map-container circle,
+.interactive-map-container line,
+.interactive-map-container text,
+.interactive-map-container g {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  -webkit-touch-callout: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+  cursor: default !important;
+  /* Disable pointer events to prevent any interaction */
+  pointer-events: none;
+}
+
+/* Re-enable pointer events only for the container to maintain focus/blur functionality */
+.interactive-map-container {
+  pointer-events: auto;
+}
+
+/* Prevent selection highlight on all browsers */
+.interactive-map-container *::selection {
+  background: transparent !important;
+}
+
+.interactive-map-container *::-moz-selection {
+  background: transparent !important;
+}
+
+/* Additional prevention for WebKit browsers */
+.interactive-map-container *::-webkit-selection {
+  background: transparent !important;
+}
+
+/* Loading State */
+.map-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #6B7280;
+  font-family: 'Inter', sans-serif;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #E5E7EB;
+  border-top: 3px solid #D62035;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.map-loading p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Error State */
+.map-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #6B7280;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+.map-error p {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+
+/* COMMENTED OUT: Animation Indicator (no longer used) */
+/* .map-animation-indicator {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #374151;
+}
+
+.current-highlight {
+  font-weight: 500;
+}
+
+.current-highlight strong {
+  color: #D62035;
+  font-weight: 600;
+}
+
+.animation-status {
+  font-size: 12px;
+  color: #6B7280;
+  font-style: italic;
+} */
+
+/* Responsive Design */
+
+/* Chrome-specific adjustments to prevent horizontal scrollbar */
+@supports (-webkit-appearance: none) {
+  .map-section {
+    /* Account for Chrome's scrollbar in viewport calculations */
+    max-width: calc(100vw - 17px);
+    /* Chrome scrollbar is typically 17px */
+  }
+
+  .interactive-map-container {
+    /* Reduce margins slightly in Chrome to prevent overflow */
+    margin-left: clamp(15px, 3.5vw, 55px);
+    margin-right: clamp(15px, 3.5vw, 55px);
+  }
+}
+
+/* Large screens - allow more margin */
+@media (min-width: 1400px) {
+  .interactive-map-container {
+    margin-left: clamp(40px, 5vw, 80px);
+    margin-right: clamp(40px, 5vw, 80px);
+  }
+
+  /* Chrome-specific adjustments for large screens */
+  @supports (-webkit-appearance: none) {
+    .interactive-map-container {
+      margin-left: clamp(35px, 4.5vw, 75px);
+      margin-right: clamp(35px, 4.5vw, 75px);
+    }
+  }
+}
+
+/* Medium-large screens */
+@media (max-width: 1399px) and (min-width: 1200px) {
+  .interactive-map-container {
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+}
+
+/* Medium screens */
+@media (max-width: 1199px) and (min-width: 769px) {
+  .interactive-map-container {
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+}
+
+/* Tablet and Mobile Responsive Design */
+@media (max-width: 768px) {
+  .map-section {
+    padding: 30px 0;
+    gap: 20px;
+    /* Full width on mobile for maximum space */
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .map-image-container {
+    /* Reduce padding on tablets */
+    padding: 0 clamp(15px, 3vw, 40px);
+  }
+
+  .map-image-wrapper {
+    /* Maintain aspect ratio but allow more flexibility */
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+  }
+}
+
+/* Mobile Phone Responsive Design */
+@media (max-width: 480px) {
+  .map-section {
+    /* Full width on mobile for maximum space */
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    max-width: 100vw;
+    /* Minimal padding to maximize map space */
+    padding: 20px 0;
+    gap: 16px;
+  }
+
+  .map-image-container {
+    /* Minimal padding on mobile */
+    padding: 0 10px;
+  }
+
+  .map-image-wrapper {
+    /* Adjust aspect ratio for mobile viewing */
+    aspect-ratio: 4 / 3;
+    border-radius: 6px;
+    /* Reduce shadow on mobile */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Make map header more compact */
+  .map-section header {
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 360px) {
+  .map-section {
+    padding: 15px 0;
+    gap: 12px;
+  }
+
+  .map-image-container {
+    /* Edge-to-edge on very small screens */
+    padding: 0 5px;
+  }
+
+  .map-image-wrapper {
+    /* Square-ish aspect ratio for very small screens */
+    aspect-ratio: 1 / 1;
+    border-radius: 4px;
+    /* Minimal shadow */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Compact header for small screens */
+  .map-section header h2 {
+    font-size: 1.8rem !important;
+    line-height: 1.2;
+  }
+
+  .map-section header p {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Mobile-specific touch improvements */
+@media (max-width: 768px) {
+  .interactive-map-container {
+    /* Improve touch interaction */
+    touch-action: pan-x pan-y;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+    /* Ensure proper mobile display */
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Ensure map SVG is touch-friendly and fills container */
+  .interactive-map-container svg {
+    touch-action: pan-x pan-y;
+    pointer-events: auto;
+    width: 100% !important;
+    height: 100% !important;
+    max-height: none !important;
+  }
+
+  /* Make markers more touch-friendly on mobile */
+  .interactive-map-container circle {
+    cursor: pointer;
+    touch-action: manipulation;
+    r: 6;
+    /* Slightly larger markers for touch */
+  }
+
+  /* Improve text readability on mobile */
+  .interactive-map-container text {
+    font-size: 16px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9);
+  }
+
+  /* Ensure region labels are visible on mobile */
+  .region-label {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    fill: #000000 !important;
+  }
+}
+
+/* Mobile-specific classes for enhanced mobile experience */
+.mobile-map {
+  /* Ensure mobile map takes full advantage of screen space */
+  width: 100vw !important;
+  margin-left: calc(-50vw + 50%) !important;
+  margin-right: calc(-50vw + 50%) !important;
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+}
+
+.mobile-container {
+  /* Force mobile container to be prominent */
+  width: 100vw !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  min-height: 50vh !important;
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 768px) {
+  .mobile-container svg {
+    /* Ensure SVG fills the entire container on mobile */
+    min-height: 100% !important;
+    object-fit: contain;
+  }
+
+  /* Make sure the map is always visible and prominent */
+  .mobile-map .interactive-map-container {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+  }
+}
+
+/* COMMENTED OUT: Pulse animation for region markers (no longer used) */
+/* .pulse-ring {
+  stroke: currentColor;
+  animation: pulse 2s ease-out infinite;
+  opacity: 0.6;
+  transform-origin: center;
+}
+
+@keyframes pulse {
+  0% {
+    r: 0;
+    opacity: 0.6;
+  }
+  70% {
+    r: 60px;
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+} */
+
+.region-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  fill: #111827;
+  /* text colour inside SVG */
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+
+  .interactive-map-container,
+  .map-animation-indicator {
+    transition: none;
+  }
+
+  .map-animation-indicator {
+    display: none;
+    /* Hide animation indicator when motion is reduced */
+  }
+
+  .loading-spinner {
+    animation: none;
+    border: 3px solid #D62035;
+    border-top: 3px solid #D62035;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .interactive-map-container {
+    border: 2px solid #000000;
+  }
+
+  .map-animation-indicator {
+    border: 1px solid #000000;
+    background: #FFFFFF;
+  }
+}
+
+/* Print styles */
+@media print {
+  .map-animation-indicator {
+    display: none;
+  }
+
+  .interactive-map-container {
+    box-shadow: none;
+    border: 1px solid #000000;
+  }
+}

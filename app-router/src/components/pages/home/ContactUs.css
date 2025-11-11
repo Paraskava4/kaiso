@@ -1,0 +1,401 @@
+/* Contact Us Section Styles */
+.contact-us-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 120px;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+}
+
+.contact-us-background {
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    height: 319px;
+
+    background-color: #000;
+}
+
+/* Background image element */
+.contact-us-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.contact-us-form-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    min-height: 670px;
+    margin-top: -100px;
+    background-color: #ffffff;
+    box-shadow: 0px 35px 35px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    padding: 62px 20px 60px;
+    box-sizing: border-box;
+}
+
+.contact-us-form-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 770px;
+    align-items: center;
+    gap: 40px;
+    margin: 0 auto;
+}
+
+.contact-us-header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.contact-us-title {
+    font-family: "Inter", Helvetica, sans-serif;
+    font-weight: 600;
+    color: #1a1a1a;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: 38.4px;
+    margin: 0;
+}
+
+.contact-us-subtitle {
+    font-family: "Inter", Helvetica, sans-serif;
+    font-weight: 400;
+    color: #4d4d4d;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 28.8px;
+    margin: 0;
+}
+
+.contact-us-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+}
+
+.contact-us-form-fields {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 19px;
+    width: 100%;
+}
+
+.contact-us-form-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    width: 100%;
+}
+
+.contact-us-form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.contact-us-form-label {
+    font-family: "Inter", Helvetica, sans-serif;
+    font-weight: 400;
+    color: #1c1c1c;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 22.4px;
+    white-space: nowrap;
+}
+
+.contact-us-form-input {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 12px;
+    width: 100%;
+    border: 0.5px solid #e5e5e5;
+    border-radius: 4px;
+    font-family: "Inter", Helvetica, sans-serif;
+    font-weight: 400;
+    color: #999999;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 22.4px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.contact-us-form-input:focus {
+    border-color: #163272;
+    color: #1c1c1c;
+}
+
+.contact-us-form-input::placeholder {
+    color: #999999;
+}
+
+.contact-us-phone-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    width: 100%;
+}
+
+/* Country flag dropdown styles are now in CountryFlagDropdown.css */
+
+.contact-us-phone-input-container {
+    flex: 1;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border: 0.5px solid #e5e5e5;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.contact-us-phone-input-container:focus-within {
+    border-color: #163272;
+}
+
+.contact-us-country-code-prefix {
+    padding: 13px 8px 13px 13px;
+    font-family: "Inter", Helvetica, sans-serif;
+    font-weight: 500;
+    color: #163272;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 22.4px;
+    white-space: nowrap;
+    user-select: none;
+    pointer-events: none;
+    border-right: 1px solid #e5e5e5;
+    margin-right: 8px;
+}
+
+.contact-us-phone-input {
+    flex: 1;
+    height: 100%;
+    padding: 13px 13px 13px 0;
+    border: none;
+    background: transparent;
+    font-family: "Inter", Helvetica, sans-serif;
+    font-weight: 400;
+    color: #1c1c1c;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 22.4px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.contact-us-phone-input::placeholder {
+    color: #999999;
+}
+
+.contact-us-textarea {
+    height: 146px;
+    padding: 14px 12px;
+    width: 100%;
+    border: 0.5px solid #e5e5e5;
+    border-radius: 4px;
+    font-family: "Inter", Helvetica, sans-serif;
+    font-weight: 400;
+    color: #999999;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 22.4px;
+    outline: none;
+    resize: vertical;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.contact-us-textarea:focus {
+    border-color: #163272;
+    color: #1c1c1c;
+}
+
+.contact-us-textarea::placeholder {
+    color: #999999;
+}
+
+/* Responsive Design */
+
+/* Large screens - ensure background image scales properly */
+@media (min-width: 1921px) {
+    .contact-us-background {
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+/* Tablet and smaller screens */
+@media (max-width: 1200px) {
+    .contact-us-form-container {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .contact-us-background {
+        height: 280px;
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+/* Mobile landscape and smaller */
+@media (max-width: 768px) {
+    .contact-us-section {
+        padding-bottom: 80px;
+    }
+
+    .contact-us-background {
+        height: 200px;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .contact-us-form-container {
+        margin-top: -60px;
+        padding: 40px 16px;
+        min-height: auto;
+    }
+
+    .contact-us-form-content {
+        gap: 30px;
+    }
+
+    .contact-us-header {
+        max-width: 100%;
+    }
+
+    .contact-us-title {
+        font-size: 28px;
+        line-height: 34px;
+    }
+
+    .contact-us-subtitle {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .contact-us-form-row {
+        flex-direction: row;
+        gap: 16px;
+    }
+
+    .contact-us-form-group {
+        width: 100%;
+    }
+
+    .contact-us-phone-container {
+        gap: 8px;
+    }
+
+    /* Country flag dropdown responsive styles are handled in CountryFlagDropdown.css */
+}
+
+/* Small mobile screens */
+@media (max-width: 480px) {
+    .contact-us-background {
+        height: 150px;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .contact-us-form-container {
+        padding: 30px 12px;
+        margin-top: -40px;
+    }
+
+    .contact-us-title {
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    .contact-us-subtitle {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .contact-us-form-input,
+    .contact-us-phone-input-container {
+        height: 45px;
+    }
+
+    .contact-us-phone-input,
+    .contact-us-country-code-prefix {
+        font-size: 14px;
+    }
+
+    .contact-us-textarea {
+        height: 120px;
+        font-size: 14px;
+    }
+}
+
+/* Ensure no horizontal scrolling */
+@media (max-width: 767px) {
+    .contact-us-section {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+
+    .contact-us-form-container {
+        max-width: calc(100vw - 20px);
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .contact-us-form-content {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .contact-us-form-row {
+        max-width: 100%;
+    }
+
+    .contact-us-form-group {
+        max-width: 100%;
+    }
+
+    .contact-us-form-input,
+    .contact-us-phone-input-container,
+    .contact-us-textarea {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .contact-us-phone-container {
+        max-width: 100%;
+    }
+}

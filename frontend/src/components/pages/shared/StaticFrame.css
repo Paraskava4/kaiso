@@ -1,0 +1,240 @@
+/* Navigation Frame Styles */
+
+/* Base Navigation Frame */
+.navigation-frame {
+    display: flex;
+    width: 1440px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Navigation Items */
+.navigation-item {
+    display: flex;
+    padding: 10px 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-top: 1px solid transparent;
+}
+
+.navigation-item.active {
+    padding: 12px 40px;
+    border-top: 1px solid #fff;
+}
+
+.navigation-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Navigation Text */
+.navigation-text {
+    color: rgba(255, 255, 255, 0.4);
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 19.2px */
+    transition: color 0.3s ease;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.navigation-item.active .navigation-text {
+    color: #fff;
+}
+
+/* Responsive Breakpoints */
+
+/* Large Screens (1200px to 1399px) */
+@media (max-width: 1399px) {
+    .navigation-frame {
+        width: 1200px;
+    }
+
+    .navigation-item {
+        padding: 10px 30px;
+    }
+
+    .navigation-item.active {
+        padding: 12px 30px;
+    }
+
+    .navigation-text {
+        font-size: 16px; /* Keep original size */
+    }
+}
+
+/* Medium Large Screens (992px to 1199px) */
+@media (max-width: 1199px) {
+    .navigation-frame {
+        width: 100%;
+        max-width: 1000px;
+        overflow-x: auto;
+        justify-content: flex-start;
+        gap: 0;
+        padding: 0 20px;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+    }
+
+    .navigation-frame::-webkit-scrollbar {
+        display: none; /* WebKit */
+    }
+
+    .navigation-item {
+        padding: 10px 40px;
+        flex-shrink: 0;
+        min-width: fit-content;
+    }
+
+    .navigation-item.active {
+        padding: 12px 40px;
+    }
+
+    .navigation-text {
+        font-size: 16px; /* Keep original size */
+    }
+}
+
+/* Medium Screens (768px to 991px) */
+@media (max-width: 991px) {
+    .navigation-frame {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        justify-content: flex-start;
+        gap: 0;
+        padding: 0 15px;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+    }
+
+    .navigation-frame::-webkit-scrollbar {
+        display: none; /* WebKit */
+    }
+
+    .navigation-item {
+        padding: 10px 40px;
+        flex-shrink: 0;
+        min-width: fit-content;
+    }
+
+    .navigation-item.active {
+        padding: 12px 40px;
+    }
+
+    .navigation-text {
+        font-size: 16px; /* Keep original size */
+        line-height: 120%;
+    }
+}
+
+/* Small Screens (576px to 767px) */
+@media (max-width: 767px) {
+    .navigation-frame {
+        width: 100%;
+        overflow-x: auto;
+        justify-content: flex-start;
+        gap: 0;
+        padding: 0 10px;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+    }
+
+    .navigation-frame::-webkit-scrollbar {
+        display: none; /* WebKit */
+    }
+
+    .navigation-item {
+        padding: 10px 40px;
+        flex-shrink: 0;
+        min-width: fit-content;
+    }
+
+    .navigation-item.active {
+        padding: 12px 40px;
+    }
+
+    .navigation-text {
+        font-size: 16px; /* Keep original size */
+        line-height: 120%;
+    }
+}
+
+/* Extra Small Screens (575px and below) */
+@media (max-width: 575px) {
+    .navigation-frame {
+        gap: 0;
+        padding: 0 5px;
+    }
+
+    .navigation-item {
+        padding: 10px 35px;
+        flex-shrink: 0;
+        min-width: fit-content;
+    }
+
+    .navigation-item.active {
+        padding: 12px 35px;
+    }
+
+    .navigation-text {
+        font-size: 16px; /* Keep original size */
+        line-height: 120%;
+    }
+}
+
+/* Tiny Screens (400px and below) */
+@media (max-width: 400px) {
+    .navigation-frame {
+        gap: 0;
+        padding: 0 2px;
+    }
+
+    .navigation-item {
+        padding: 10px 30px;
+        flex-shrink: 0;
+        min-width: fit-content;
+    }
+
+    .navigation-item.active {
+        padding: 12px 30px;
+    }
+
+    .navigation-text {
+        font-size: 16px; /* Keep original size */
+        line-height: 120%;
+    }
+}
+
+/* Touch-friendly improvements for mobile */
+@media (max-width: 767px) {
+    .navigation-item {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    .navigation-item,
+    .navigation-text {
+        transition: none;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .navigation-item {
+        border: 1px solid;
+    }
+
+    .navigation-item.active {
+        border-top: 2px solid #fff;
+    }
+}

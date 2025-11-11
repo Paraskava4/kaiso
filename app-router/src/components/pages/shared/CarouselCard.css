@@ -1,0 +1,528 @@
+/* Carousel Card Styles */
+
+/* Base Carousel Card */
+.carousel-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Carousel Content */
+.carousel-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Upper Content Container */
+.carousel-upper-content {
+    display: flex;
+    max-width: 829px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+/* Category Frame */
+.carousel-category-frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.carousel-category-icon {
+    width: 56px;
+    height: 56px;
+    aspect-ratio: 1/1;
+}
+
+.carousel-category-text {
+    color: #fff;
+    font-family: "Inter";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 24px */
+}
+
+/* Main Title */
+.carousel-title {
+    max-width: 790px;
+    color: #fff;
+    font-family: "Inter";
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 72px */
+    margin: 0;
+}
+
+/* Description */
+.carousel-description {
+    color: #fff;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%; /* 28.8px */
+    margin: 0;
+}
+
+/* CTA Section */
+.carousel-cta {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-cta:hover {
+    opacity: 0.8;
+}
+
+.carousel-cta-text {
+    color: #fff;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 135%; /* 24.3px */
+}
+
+.carousel-cta-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Responsive Breakpoints */
+
+/* Large Screens (1200px to 1399px) */
+@media (max-width: 1399px) {
+    .carousel-upper-content {
+        max-width: 700px;
+    }
+
+    .carousel-title {
+        max-width: 650px;
+        font-size: 52px;
+        line-height: 120%;
+    }
+
+    .carousel-category-text {
+        font-size: 18px;
+    }
+
+    .carousel-description {
+        font-size: 16px;
+    }
+
+    .carousel-cta-text {
+        font-size: 16px;
+    }
+
+    .carousel-category-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .carousel-cta-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Medium Large Screens (992px to 1199px) */
+@media (max-width: 1199px) {
+    .carousel-content {
+        gap: 18px;
+    }
+
+    .carousel-upper-content {
+        max-width: 650px;
+        gap: 12px;
+    }
+
+    .carousel-title {
+        max-width: 600px;
+        font-size: 48px;
+        line-height: 120%;
+    }
+
+    .carousel-category-text {
+        font-size: 18px;
+    }
+
+    .carousel-description {
+        font-size: 16px;
+        line-height: 150%;
+    }
+
+    .carousel-cta-text {
+        font-size: 16px;
+    }
+
+    .carousel-category-frame {
+        gap: 12px;
+    }
+
+    .carousel-category-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .carousel-cta {
+        gap: 12px;
+    }
+
+    .carousel-cta-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Medium Screens (768px to 991px) */
+@media (max-width: 991px) {
+    .carousel-content {
+        gap: 16px;
+    }
+
+    .carousel-upper-content {
+        max-width: 550px;
+        gap: 10px;
+    }
+
+    .carousel-title {
+        max-width: 500px;
+        font-size: 40px;
+        line-height: 120%;
+    }
+
+    .carousel-category-text {
+        font-size: 16px;
+    }
+
+    .carousel-description {
+        font-size: 15px;
+        line-height: 150%;
+    }
+
+    .carousel-cta-text {
+        font-size: 15px;
+    }
+
+    .carousel-category-frame {
+        gap: 10px;
+    }
+
+    .carousel-category-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .carousel-cta {
+        gap: 10px;
+    }
+
+    .carousel-cta-icon {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Medium-Small Screens (768px to 900px) - Smooth font scaling */
+@media (max-width: 900px) {
+    .carousel-content {
+        gap: 15px;
+    }
+
+    .carousel-upper-content {
+        max-width: 520px;
+        gap: 9px;
+    }
+
+    .carousel-title {
+        max-width: 480px;
+        font-size: 36px;
+        line-height: 118%;
+    }
+
+    .carousel-category-text {
+        font-size: 15px;
+    }
+
+    .carousel-description {
+        font-size: 14px;
+        line-height: 148%;
+    }
+
+    .carousel-cta-text {
+        font-size: 14px;
+    }
+
+    .carousel-category-frame {
+        gap: 9px;
+    }
+
+    .carousel-category-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .carousel-cta {
+        gap: 9px;
+    }
+
+    .carousel-cta-icon {
+        width: 17px;
+        height: 17px;
+    }
+}
+
+/* Small-Medium Screens (768px to 850px) - Continue smooth scaling */
+@media (max-width: 850px) {
+    .carousel-content {
+        gap: 14px;
+    }
+
+    .carousel-upper-content {
+        max-width: 480px;
+        gap: 8px;
+    }
+
+    .carousel-title {
+        max-width: 450px;
+        font-size: 32px;
+        line-height: 116%;
+    }
+
+    .carousel-category-text {
+        font-size: 14px;
+    }
+
+    .carousel-description {
+        font-size: 13px;
+        line-height: 146%;
+    }
+
+    .carousel-cta-text {
+        font-size: 13px;
+    }
+
+    .carousel-category-frame {
+        gap: 8px;
+    }
+
+    .carousel-category-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .carousel-cta {
+        gap: 8px;
+    }
+
+    .carousel-cta-icon {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* Small Screens (576px to 767px) - Gradual transition instead of dramatic jump */
+@media (max-width: 767px) {
+    .carousel-content {
+        gap: 12px;
+    }
+
+    .carousel-upper-content {
+        max-width: 100%;
+        gap: 7px;
+    }
+
+    .carousel-title {
+        max-width: 100%;
+        font-size: 28px;
+        line-height: 114%;
+    }
+
+    .carousel-category-text {
+        font-size: 13px;
+    }
+
+    .carousel-description {
+        font-size: 12px;
+        line-height: 144%;
+    }
+
+    .carousel-cta-text {
+        font-size: 12px;
+    }
+
+    .carousel-category-frame {
+        gap: 7px;
+    }
+
+    .carousel-category-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .carousel-cta {
+        gap: 7px;
+    }
+
+    .carousel-cta-icon {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+/* Extra Small Screens (575px and below) - Continue gradual scaling */
+@media (max-width: 575px) {
+    .carousel-content {
+        gap: 10px;
+    }
+
+    .carousel-upper-content {
+        gap: 6px;
+    }
+
+    .carousel-title {
+        font-size: 24px;
+        line-height: 112%;
+    }
+
+    .carousel-category-text {
+        font-size: 12px;
+    }
+
+    .carousel-description {
+        font-size: 11px;
+        line-height: 142%;
+    }
+
+    .carousel-cta-text {
+        font-size: 11px;
+    }
+
+    .carousel-category-frame {
+        gap: 6px;
+    }
+
+    .carousel-category-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .carousel-cta {
+        gap: 6px;
+    }
+
+    .carousel-cta-icon {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+/* Small Mobile Screens (480px and below) - Gradual scaling continues */
+@media (max-width: 480px) {
+    .carousel-content {
+        gap: 8px;
+    }
+
+    .carousel-upper-content {
+        gap: 5px;
+    }
+
+    .carousel-title {
+        font-size: 22px;
+        line-height: 111%;
+    }
+
+    .carousel-category-text {
+        font-size: 11px;
+    }
+
+    .carousel-description {
+        font-size: 10px;
+        line-height: 140%;
+    }
+
+    .carousel-cta-text {
+        font-size: 10px;
+    }
+
+    .carousel-category-frame {
+        gap: 5px;
+    }
+
+    .carousel-category-icon {
+        width: 26px;
+        height: 26px;
+    }
+
+    .carousel-cta {
+        gap: 5px;
+    }
+
+    .carousel-cta-icon {
+        width: 13px;
+        height: 13px;
+    }
+}
+
+/* Tiny Screens (400px and below) - Final scaling step */
+@media (max-width: 400px) {
+    .carousel-content {
+        gap: 7px;
+    }
+
+    .carousel-upper-content {
+        gap: 4px;
+    }
+
+    .carousel-title {
+        font-size: 20px;
+        line-height: 110%;
+    }
+
+    .carousel-category-text {
+        font-size: 10px;
+    }
+
+    .carousel-description {
+        font-size: 9px;
+        line-height: 138%;
+    }
+
+    .carousel-cta-text {
+        font-size: 9px;
+    }
+
+    .carousel-category-frame {
+        gap: 4px;
+    }
+
+    .carousel-category-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .carousel-cta {
+        gap: 4px;
+    }
+
+    .carousel-cta-icon {
+        width: 12px;
+        height: 12px;
+    }
+}

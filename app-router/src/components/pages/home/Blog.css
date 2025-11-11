@@ -1,0 +1,386 @@
+/* Blog Section Styles */
+.blog-section {
+    display: flex;
+    width: 100%;
+    max-width: 1920px;
+    min-height: 700px; /* Reduced from 800px to avoid blank space */
+    padding: 100px 0px;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    flex-shrink: 0;
+    margin: 0 auto;
+    background-color: #f4f5f7;
+}
+
+/* Blog Cards Container */
+.blog-cards-container {
+    display: flex;
+    width: 1320px;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+/* Individual Blog Card */
+.blog-card {
+    position: relative;
+    width: 420px;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Blog Card Content - positioned at top:30px, left:30px */
+.blog-card-content {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    display: flex;
+    width: 307px;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Blog Card Text */
+.blog-card-title {
+    color: #1c1c1c;
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    margin: 0;
+}
+
+.blog-card-description {
+    color: #4f4f4f;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    margin: 0;
+}
+
+/* Plus Button - Responsive positioning based on card size */
+.blog-card-button {
+    position: absolute;
+    bottom: 4.8%; /* 20px from 420px height = 4.8% */
+    right: 4.8%; /* 20px from 420px width = 4.8% */
+    display: flex;
+    width: 9.5%; /* 40px from 420px width = 9.5% */
+    height: 8%; /* 40px from 500px height = 8% */
+    min-width: 30px; /* Minimum size for touch */
+    min-height: 30px;
+    max-width: 50px; /* Maximum size limit */
+    max-height: 50px;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+    border: 1px solid var(--1C1C1C, #1c1c1c);
+    background: var(--EBE6E0, #ebe6e0);
+    border-radius: 50%; /* Always circular */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.blog-card-button:hover {
+    background: #1c1c1c;
+    transform: scale(1.1);
+}
+
+.blog-card-button:hover img {
+    filter: invert(1);
+}
+
+.blog-card-button img {
+    width: 60%; /* 60% of button size for proper proportion */
+    height: 60%;
+    min-width: 16px; /* Minimum readable size */
+    min-height: 16px;
+    max-width: 28px; /* Maximum size */
+    max-height: 28px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+/* Responsive Design */
+
+/* Screens smaller than 1320px - Start responsive changes */
+@media (max-width: 1319px) {
+    .blog-section {
+        padding: 80px 40px;
+    }
+
+    .blog-cards-container {
+        width: 100%;
+        max-width: 1200px;
+        gap: 20px;
+    }
+
+    .blog-card {
+        width: calc(33.333% - 14px);
+        min-width: 350px;
+    }
+}
+
+/* Medium Large Screens (992px to 1199px) */
+@media (max-width: 1199px) {
+    .blog-section {
+        padding: 60px 30px;
+        gap: 50px;
+        min-height: 650px; /* Reduced height */
+    }
+
+    .blog-cards-container {
+        width: 100%;
+        max-width: 900px;
+        gap: 18px;
+    }
+
+    .blog-card {
+        width: calc(33.333% - 12px);
+        min-width: 260px; /* Reduced to prevent overflow */
+        max-width: 290px; /* Added max-width */
+        height: 420px; /* Reduced height */
+    }
+
+    .blog-card-content {
+        top: 22px;
+        left: 22px;
+        width: calc(100% - 60px); /* Responsive width */
+        gap: 10px;
+    }
+
+    .blog-card-title {
+        font-size: 19px;
+        line-height: 140%;
+    }
+
+    .blog-card-description {
+        font-size: 15px;
+        line-height: 140%;
+    }
+}
+
+/* Medium Screens (768px to 991px) */
+@media (max-width: 991px) {
+    .blog-section {
+        padding: 50px 20px;
+        gap: 40px;
+        min-height: 650px; /* Reduced height to avoid blank space */
+    }
+
+    .blog-cards-container {
+        width: 100%;
+        max-width: 720px; /* Increased to fit cards properly */
+        gap: 15px;
+    }
+
+    .blog-card {
+        width: calc(33.333% - 10px);
+        min-width: 220px; /* Reduced to fit 3 cards */
+        max-width: 240px; /* Added max-width to prevent overflow */
+        height: 380px; /* Reduced height */
+    }
+
+    .blog-card-content {
+        top: 18px;
+        left: 18px;
+        width: calc(100% - 50px); /* Responsive width */
+        gap: 10px;
+    }
+
+    .blog-card-title {
+        font-size: 18px;
+        line-height: 140%;
+    }
+
+    .blog-card-description {
+        font-size: 14px;
+        line-height: 140%;
+    }
+}
+
+/* Small Screens (576px to 767px) - Start Horizontal Scroll */
+@media (max-width: 767px) {
+    .blog-section {
+        padding: 40px 15px;
+        gap: 30px;
+        min-height: 550px; /* Reduced height */
+    }
+
+    .blog-cards-container {
+        width: 100%;
+        max-width: none;
+        overflow-x: auto;
+        overflow-y: hidden;
+        gap: 20px;
+        padding-bottom: 10px;
+    }
+
+    .blog-card {
+        flex-shrink: 0;
+        min-width: 300px;
+        max-width: 320px;
+        height: 360px; /* Reduced height */
+    }
+
+    .blog-card-content {
+        top: 16px;
+        left: 16px;
+        width: calc(100% - 50px); /* Responsive width */
+        gap: 8px;
+    }
+
+    .blog-card-title {
+        font-size: 17px;
+        line-height: 140%;
+    }
+
+    .blog-card-description {
+        font-size: 13px;
+        line-height: 140%;
+    }
+}
+
+/* Extra Small Screens (575px and below) */
+@media (max-width: 575px) {
+    .blog-section {
+        padding: 30px 10px;
+        gap: 20px;
+        min-height: 480px; /* Reduced height */
+    }
+
+    .blog-cards-container {
+        gap: 16px;
+    }
+
+    .blog-card {
+        flex-shrink: 0;
+        min-width: 260px;
+        max-width: 280px;
+        height: 320px; /* Reduced height */
+    }
+
+    .blog-card-content {
+        top: 14px;
+        left: 14px;
+        width: calc(100% - 45px); /* Responsive width */
+        gap: 6px;
+    }
+
+    .blog-card-title {
+        font-size: 15px;
+        line-height: 135%;
+    }
+
+    .blog-card-description {
+        font-size: 12px;
+        line-height: 135%;
+    }
+}
+
+/* Tiny Screens (400px and below) */
+@media (max-width: 400px) {
+    .blog-section {
+        padding: 20px 8px;
+        min-height: 420px; /* Reduced height */
+    }
+
+    .blog-cards-container {
+        gap: 12px;
+    }
+
+    .blog-card {
+        flex-shrink: 0;
+        min-width: 240px;
+        max-width: 260px;
+        height: 300px; /* Reduced height */
+    }
+
+    .blog-card-content {
+        top: 12px;
+        left: 12px;
+        width: calc(100% - 40px); /* Responsive width */
+        gap: 5px;
+    }
+
+    .blog-card-title {
+        font-size: 14px;
+        line-height: 130%;
+    }
+
+    .blog-card-description {
+        font-size: 11px;
+        line-height: 130%;
+    }
+}
+
+/* Scroll Container Styles for Mobile */
+.blog-scroll-container {
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.blog-scroll-container:active {
+    cursor: grabbing;
+}
+
+/* Hide scrollbar for mobile horizontal scroll */
+@media (max-width: 767px) {
+    .blog-scroll-container {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+    }
+
+    .blog-scroll-container::-webkit-scrollbar {
+        display: none; /* WebKit */
+    }
+}
+
+/* Touch-friendly improvements for mobile */
+@media (max-width: 767px) {
+    .blog-card-button {
+        min-width: 36px; /* Ensure minimum touch target */
+        min-height: 36px;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    .blog-card,
+    .blog-card-button,
+    .blog-scroll-container {
+        transition: none;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .blog-card {
+        border: 2px solid;
+    }
+
+    .blog-card-button {
+        border: 2px solid;
+    }
+}

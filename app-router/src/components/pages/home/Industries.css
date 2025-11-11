@@ -1,0 +1,375 @@
+/* Industries Section Styles */
+.industries-section {
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  min-height: 750px;
+  padding: 120px 0px;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  flex-shrink: 0;
+  margin: 0 auto;
+}
+
+/* Industries Header Styles */
+.industries-header {
+  display: flex;
+  width: 100%;
+  max-width: 596px;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.industries-subtitle {
+  color: var(--D62035, #D62035);
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 160%;
+  text-transform: uppercase;
+  margin: 0;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.industries-title {
+  color: var(--black-7001-a-1, #1A1A1A);
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  margin: 0;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Industries Container - Grid Layout */
+.industries-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: auto;
+  gap: 24px;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Single Column Layout for Syndicate Industries */
+.industries-container.syndicate-single-column {
+  grid-template-columns: repeat(6, 1fr);
+  max-width: 600px;
+  gap: 24px;
+}
+
+/* Remove min-height for Syndicate Industries */
+.industries-section.syndicate-industries {
+  min-height: auto;
+}
+
+/* Industry Item Base Styles */
+.industry-item {
+  display: flex;
+  width: 150px;
+  height: 150px;
+  min-width: 150px;
+  min-height: 150px;
+  padding: 8px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  aspect-ratio: 1/1;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.industry-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Scroll Styles */
+.industries-container.mobile-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.industries-scroll-row {
+  display: flex;
+  width: max-content;
+  gap: 20px;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  padding: 10px 0;
+  will-change: transform;
+}
+
+/* First and third rows scroll left to right */
+.industries-scroll-row:nth-child(odd) {
+  animation-name: scrollLeftToRight;
+  animation-duration: 85s;
+}
+
+/* Second row scrolls right to left */
+.industries-scroll-row:nth-child(even) {
+  animation-name: scrollRightToLeft;
+  animation-duration: 75s;
+}
+
+/* Animation for left to right scrolling */
+@keyframes scrollLeftToRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* Animation for right to left scrolling */
+@keyframes scrollRightToLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive Breakpoints */
+
+/* Extra Large Screens (1400px and above) */
+@media (min-width: 1400px) {
+  .industries-section {
+    max-width: 1720px;
+  }
+}
+
+/* Large Screens (1200px to 1399px) */
+@media (max-width: 1399px) {
+  .industries-section {
+    padding: 100px 60px;
+    gap: 80px;
+  }
+
+  .industries-container {
+    grid-template-columns: repeat(5, 1fr);
+    padding: 0 20px;
+  }
+
+  .industries-container.syndicate-single-column {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 600px;
+  }
+
+  .industries-header {
+    padding: 0 40px;
+  }
+}
+
+/* Medium Large Screens (992px to 1199px) */
+@media (max-width: 1199px) {
+  .industries-section {
+    padding: 80px 40px;
+    gap: 60px;
+  }
+
+  .industries-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding: 0 15px;
+  }
+
+  .industries-container.syndicate-single-column {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 500px;
+  }
+
+  .industry-item {
+    width: 130px;
+    height: 130px;
+    min-width: 130px;
+    min-height: 130px;
+  }
+
+  .industries-header {
+    padding: 0 30px;
+  }
+
+  .industries-title {
+    font-size: 28px;
+  }
+
+  .industries-subtitle {
+    font-size: 15px;
+  }
+}
+
+/* Medium Screens (768px to 991px) */
+@media (max-width: 991px) {
+  .industries-section {
+    padding: 60px 30px;
+    gap: 40px;
+  }
+
+  .industries-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .industries-container.syndicate-single-column {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 450px;
+  }
+
+  .industry-item {
+    width: 120px;
+    height: 120px;
+    min-width: 120px;
+    min-height: 120px;
+  }
+
+  .industries-header {
+    padding: 0 20px;
+  }
+
+  .industries-title {
+    font-size: 26px;
+  }
+
+  .industries-subtitle {
+    font-size: 14px;
+  }
+}
+
+/* Small Screens (601px to 767px) */
+@media (max-width: 767px) and (min-width: 601px) {
+  .industries-section {
+    padding: 40px 20px;
+    gap: 30px;
+  }
+
+  .industries-container {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 5px;
+    gap: 15px;
+  }
+
+  .industries-container.syndicate-single-column {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 400px;
+  }
+
+  .industry-item {
+    width: 110px;
+    height: 110px;
+    min-width: 110px;
+    min-height: 110px;
+  }
+
+  .industries-header {
+    padding: 0 15px;
+  }
+
+  .industries-title {
+    font-size: 24px;
+    line-height: 130%;
+  }
+
+  .industries-subtitle {
+    font-size: 14px;
+  }
+}
+
+/* Extra Small Screens (600px and below) - Mobile Scroll */
+@media (max-width: 600px) {
+  .industries-section {
+    padding: 30px 15px;
+    gap: 20px;
+  }
+
+  .industries-header {
+    padding: 0 10px;
+  }
+
+  .industries-title {
+    font-size: 22px;
+    line-height: 130%;
+  }
+
+  .industries-subtitle {
+    font-size: 13px;
+  }
+
+  /* Mobile scroll row items */
+  .industries-scroll-row .industry-item {
+    width: 110px;
+    height: 110px;
+    flex-shrink: 0;
+    margin: 0 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+
+  .industries-scroll-row .industry-item:hover {
+    transform: translateY(-5px);
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Tiny Screens (400px and below) */
+@media (max-width: 400px) {
+  .industries-section {
+    padding: 20px 10px;
+  }
+
+  .industries-header {
+    padding: 0 5px;
+  }
+
+  .industries-title {
+    font-size: 20px;
+    line-height: 130%;
+  }
+
+  .industries-subtitle {
+    font-size: 12px;
+  }
+
+  .industries-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .industries-container.syndicate-single-column {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 250px;
+  }
+
+  .industry-item {
+    width: 90px;
+    height: 90px;
+    min-width: 90px;
+    min-height: 90px;
+  }
+
+  .industries-scroll-row .industry-item {
+    width: 90px;
+    height: 90px;
+  }
+}

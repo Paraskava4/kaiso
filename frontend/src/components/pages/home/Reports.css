@@ -1,0 +1,318 @@
+/* Reports Section Styles */
+.reports-section {
+  height: 800px;
+  align-self: stretch;
+  background: var(--163272, #163272);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 0 66px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.reports-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 285px;
+  height: 190px;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+/* Background image element */
+.reports-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.reports-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  width: 100%;
+}
+
+.reports-scroll-container {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: grab;
+  transition: cursor 0.2s ease;
+}
+
+.reports-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox */
+.reports-scroll-container {
+  scrollbar-width: none;
+}
+
+/* IE and Edge */
+.reports-scroll-container {
+  -ms-overflow-style: none;
+}
+
+/* Active dragging state */
+.reports-scroll-container:active {
+  cursor: grabbing;
+}
+
+/* Prevent image dragging within cards */
+.reports-scroll-container img {
+  pointer-events: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+/* Responsive adjustments */
+
+/* Extra Large Screens (1780px and above) */
+@media (min-width: 1780px) {
+  .reports-background {
+    width: 320px;
+    height: 213px;
+  }
+}
+
+/* Large Screens (1200px to 1399px) */
+@media (max-width: 1399px) {
+  .reports-section {
+    padding: 0 80px;
+  }
+
+  .reports-background {
+    width: 260px;
+    height: 173px;
+  }
+}
+
+/* Medium Large Screens (992px to 1199px) */
+@media (max-width: 1199px) {
+  .reports-section {
+    padding: 0 60px;
+  }
+
+  .reports-content {
+    gap: 50px;
+  }
+
+  .reports-background {
+    width: 240px;
+    height: 160px;
+  }
+}
+
+/* Medium Screens (768px to 991px) */
+@media (max-width: 991px) {
+  .reports-section {
+    padding: 0 40px;
+    height: auto;
+    min-height: 650px;
+  }
+
+  .reports-content {
+    gap: 40px;
+  }
+
+  .reports-scroll-container {
+    gap: 24px;
+  }
+
+  .reports-background {
+    width: 220px;
+    height: 147px;
+  }
+}
+
+/* Small Screens (601px to 767px) */
+@media (max-width: 767px) {
+  .reports-section {
+    padding: 0 20px;
+    min-height: 600px;
+  }
+
+  .reports-content {
+    gap: 35px;
+  }
+
+  .reports-scroll-container {
+    gap: 20px;
+  }
+
+  .reports-background {
+    width: 200px;
+    height: 133px;
+  }
+}
+
+/* Extra Small Screens (481px to 600px) */
+@media (max-width: 600px) {
+  .reports-section {
+    padding: 0 15px;
+    min-height: 550px;
+  }
+
+  .reports-content {
+    gap: 30px;
+  }
+
+  .reports-scroll-container {
+    gap: 18px;
+  }
+
+  .reports-background {
+    width: 180px;
+    height: 120px;
+  }
+}
+
+/* Mobile Screens (376px to 480px) */
+@media (max-width: 480px) {
+  .reports-section {
+    padding: 0 12px;
+    min-height: 500px;
+  }
+
+  .reports-content {
+    gap: 25px;
+  }
+
+  .reports-scroll-container {
+    gap: 16px;
+  }
+
+  .reports-background {
+    width: 260px !important;
+    height: 207px !important;
+  }
+}
+
+/* Tiny Screens (375px and below) */
+@media (max-width: 375px) {
+  .reports-section {
+    padding: 0 10px;
+    min-height: 480px;
+  }
+
+  .reports-content {
+    gap: 20px;
+  }
+
+  .reports-scroll-container {
+    gap: 14px;
+  }
+
+  .reports-background {
+    width: 140px;
+    height: 93px;
+  }
+}
+
+/* Report Card Responsive Styles */
+
+/* Medium Screens (768px to 991px) */
+@media (max-width: 991px) {
+  .reports-scroll-container>div {
+    width: 320px !important;
+    height: 420px !important;
+  }
+
+  .reports-scroll-container>div>div {
+    width: 320px !important;
+    padding: 0px 30px 18px 18px !important;
+  }
+
+  .reports-scroll-container>div>div>p {
+    font-size: 18px !important;
+  }
+}
+
+/* Small Screens (601px to 767px) */
+@media (max-width: 767px) {
+  .reports-scroll-container>div {
+    width: 300px !important;
+    height: 400px !important;
+  }
+
+  .reports-scroll-container>div>div {
+    width: 300px !important;
+    padding: 0px 25px 16px 16px !important;
+  }
+
+  .reports-scroll-container>div>div>p {
+    font-size: 17px !important;
+  }
+}
+
+/* Extra Small Screens (481px to 600px) */
+@media (max-width: 600px) {
+  .reports-scroll-container>div {
+    width: 280px !important;
+    height: 380px !important;
+  }
+
+  .reports-scroll-container>div>div {
+    width: 280px !important;
+    padding: 0px 20px 15px 15px !important;
+  }
+
+  .reports-scroll-container>div>div>p {
+    font-size: 16px !important;
+  }
+}
+
+/* Mobile Screens (376px to 480px) */
+@media (max-width: 480px) {
+  .reports-scroll-container>div {
+    width: 260px !important;
+    height: 360px !important;
+  }
+
+  .reports-scroll-container>div>div {
+    width: 260px !important;
+    padding: 0px 18px 14px 14px !important;
+  }
+
+  .reports-scroll-container>div>div>p {
+    font-size: 15px !important;
+  }
+}
+
+/* Tiny Screens (375px and below) */
+@media (max-width: 375px) {
+  .reports-scroll-container>div {
+    width: 240px !important;
+    height: 340px !important;
+  }
+
+  .reports-scroll-container>div>div {
+    width: 240px !important;
+    padding: 0px 16px 12px 12px !important;
+  }
+
+  .reports-scroll-container>div>div>p {
+    font-size: 14px !important;
+    line-height: 150% !important;
+  }
+}

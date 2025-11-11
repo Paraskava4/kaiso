@@ -1,0 +1,35 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /cgi-bin/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /inquiry-before-buy
+Disallow: /thank-you/
+Disallow: /my-account/
+Disallow: /login/
+Disallow: /register/
+Disallow: /tmp/
+Disallow: /privacy-policy/
+Disallow: /terms-conditions/
+Disallow: /*?add-to-cart=
+Disallow: /*?filter_
+
+Sitemap: https://www.kaisoresearch.com/sitemap.xml
+
+# Sitemaps
+Sitemap: https://www.kaisoresearch.com/sitemap-0.xml
+Sitemap: https://www.kaisoresearch.com/sitemap-1.xml
+Sitemap: https://www.kaisoresearch.com/sitemap-2.xml
+Sitemap: https://www.kaisoresearch.com/sitemap-3.xml
+Sitemap: https://www.kaisoresearch.com/sitemap-4.xml
+Sitemap: https://www.kaisoresearch.com/sitemap-5.xml
+Sitemap: https://www.kaisoresearch.com/sitemap-6.xml
+Sitemap: https://www.kaisoresearch.com/sitemap-7.xml
+Sitemap: https://www.kaisoresearch.com/sitemap-8.xml
+Sitemap: https://www.kaisoresearch.com/sitemap-9.xml
+Sitemap: https://www.kaisoresearch.com/sitemap-10.xml
+Sitemap: https://www.kaisoresearch.com/sitemap-11.xml
+Sitemap: https://www.kaisoresearch.com/sitemap-12.xml
+Sitemap: https://www.kaisoresearch.com/sitemap.xml

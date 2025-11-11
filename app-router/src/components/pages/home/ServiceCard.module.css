@@ -1,0 +1,174 @@
+    /* Service Card Styles */
+
+    .serviceCard {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        border-bottom: 0.5px solid var(--Border);
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 16px 20px;
+    }
+
+    .serviceCardHeading {
+        font-weight: 600;
+        line-height: 1.375;
+        color: #18181b;
+        font-family: var(--font-inter);
+        margin: 0;
+        font-size: 14px;
+    }
+
+    .serviceCardDescription {
+        line-height: 1.556;
+        color: black;
+        max-width: 100%;
+        font-family: var(--font-inter);
+        margin-top: 10px;
+        font-size: 13px;
+        margin: 10px 0 0 0;
+    }
+
+    .serviceCardButton {
+        display: flex;
+        align-items: center;
+        align-self: flex-start;
+        font-weight: 500;
+        line-height: 1.6;
+        color: #dc2626;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        font-family: var(--font-inter);
+        padding: 0;
+        transition: all 0.3s ease;
+        gap: 10px;
+        margin-top: 10px;
+        font-size: 14px;
+        min-height: 44px;
+    }
+
+    .serviceCardIcon {
+        object-fit: contain;
+        flex-shrink: 0;
+        align-self: stretch;
+        margin: auto 0;
+        aspect-ratio: 1;
+        width: 24px;
+    }
+
+    /* RESPONSIVE STYLES */
+
+    /* Between 1440px and 768px: Scale down sizes */
+    @media (max-width: 1440px) and (min-width: 769px) {
+        .serviceCard {
+            padding: calc(16px - (1440px - 100vw) * 0.005) calc(20px - (1440px - 100vw) * 0.008);
+        }
+
+        .serviceCardHeading {
+            font-size: 14px;
+        }
+
+        .serviceCardDescription {
+            font-size: 14px;
+            margin-top: calc(10px - (1440px - 100vw) * 0.003);
+        }
+
+        .serviceCardButton {
+            gap: calc(10px - (1440px - 100vw) * 0.003);
+            margin-top: calc(10px - (1440px - 100vw) * 0.003);
+            font-size: calc(16px - (1440px - 100vw) * 0.004);
+        }
+
+        .serviceCardIcon {
+            width: 16px;
+        }
+    }
+
+    /* Below 768px: Mobile styles */
+    @media (max-width: 768px) {
+        .serviceCard {
+            padding: 16px 16px;
+        }
+
+        .serviceCardHeading {
+            font-size: 14px;
+        }
+
+        .serviceCardDescription {
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        .serviceCardButton {
+            gap: 8px;
+            margin-top: 12px;
+            font-size: 14px;
+            min-height: 48px;
+        }
+
+        .serviceCardIcon {
+            width: 16px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .serviceCard {
+            padding: 14px 16px;
+        }
+
+        .serviceCardHeading {
+            font-size: 18px;
+        }
+
+        .serviceCardDescription {
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        .serviceCardButton {
+            gap: 8px;
+            margin-top: 12px;
+            font-size: 14px;
+            min-height: 48px;
+        }
+
+        .serviceCardIcon {
+            width: 16px;
+        }
+    }
+
+    @media (max-width: 375px) {
+        .serviceCard {
+            padding: 12px 14px;
+        }
+
+        .serviceCardHeading {
+            font-size: 17px;
+        }
+
+        .serviceCardDescription {
+            font-size: 14px;
+            margin-top: 6px;
+        }
+
+        .serviceCardButton {
+            gap: 6px;
+            margin-top: 10px;
+            font-size: 14px;
+            min-height: 48px;
+        }
+
+        .serviceCardIcon {
+            width: 16px;
+        }
+    }
+
+    /* Hover effects for desktop */
+    @media (min-width: 1081px) {
+        .serviceCardButton:hover {
+            color: #b91c1c;
+            transform: translateX(2px);
+        }
+    }

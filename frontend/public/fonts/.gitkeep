@@ -1,0 +1,8 @@
+# Fonts Directory
+
+This directory contains font files that will be served statically.
+
+## Usage:
+- Place font files (.woff, .woff2, .ttf, .otf) here
+- Reference them in CSS using: `/fonts/filename.woff2`
+- These fonts will be publicly accessible
